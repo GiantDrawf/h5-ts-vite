@@ -1,0 +1,53 @@
+@mixin ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin ellipsis-line($line: 2) {
+  /* stylelint-disable */
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  /* stylelint-enable */
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+@mixin hairline($pos: bottom, $left: 0px, $right: 0px) {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+
+    @if $pos == top {
+      top: 0;
+    } @else {
+      bottom: 0;
+    }
+    left: $left;
+    right: $right;
+    background-image: linear-gradient(transparent 50%, $border-color 50%);
+  }
+}
+
+@mixin half-px($color: currentColor, $radius: 0) {
+  position: relative;
+  &::before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    width: 200%;
+    height: 200%;
+    border: 1px solid $color;
+    border-radius: $radius * 2;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+  }
+}

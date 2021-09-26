@@ -1,0 +1,103 @@
+@import 'variable';
+@import 'mixin.scss';
+
+// 数字字体
+// @font-face {
+//   font-family: $number-font;
+//   src: url('../font/PAJK-NUM-BAND-Regular.woff') format('woff'),
+//     url('../font/PAJK-NUM-BAND-Regular.ttf') format('truetype');
+// }
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  color: #333;
+  font-size: 14px;
+  font-family: $defaultFontFamily;
+}
+
+.l-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: $bg-color;
+
+  &__content {
+    flex: 1;
+    height: 93.4%; // 低版本兼容
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+button {
+  padding: 0;
+  background: none;
+  border: 0;
+  line-height: normal;
+  vertical-align: middle;
+  outline: none;
+  color: inherit;
+}
+
+// 超过1行显示...
+.g-ellipsis {
+  @include ellipsis;
+}
+
+// 超过2行显示...
+.g-ellipsis2 {
+  @include ellipsis-line();
+}
+
+// 清除浮动
+.g-clearfix {
+  &:after {
+    display: block;
+    clear: both;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    content: '';
+  }
+}
+
+// 隐藏滚动条
+.g-noscrollbar {
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// 富文本
+// .g-rich {
+//   word-break: break-word;
+//   line-height: 1.5;
+//   font-size: 16px;
+
+//   * {
+//     max-width: 100%;
+//   }
+
+//   img,iframe,embed,video {
+//     display: block;
+//     width: 100%;
+
+//     &[width*='0'],&[width*='1'],&[width*='2'],&[width*='3'],&[width*='4'],&[width*='5'],&[width*='6'],&[width*='7'],&[width*='8'],&[width*='9'] {
+//       display: inline-block;
+//       width: auto;
+//     }
+//   }
+//   embed,video {
+//     min-height: 5rem;
+//     background: #333;
+//   }
+//   p {
+//     min-height: 1em;
+//   }
+// }

@@ -1,0 +1,87 @@
+@import 'variable.scss';
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  /* 禁止选中文本（如无文本选中需求，此为必选项） */
+  user-select: none;
+}
+
+main {
+  display: block;
+}
+
+canvas, a, img {
+  /* 禁止长按链接与图片弹出菜单 */
+  -webkit-touch-callout: none;
+}
+
+a {
+  text-decoration: none;
+  background: transparent;
+}
+
+img {
+  border: 0;
+  width: 100%;
+  vertical-align: middle;
+  object-fit: contain;
+}
+b, strong {
+  font-weight: bolder;
+}
+
+h1,h2,h3,h4,ol,p,ul,figure {
+  margin: 0;
+}
+
+ol, ul {
+  list-style: none;
+  padding: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+button,input,select,textarea {
+  margin: 0;
+  outline: none;
+
+  &:disabled {
+    -webkit-text-fill-color: $hint-color;
+    background: transparent;
+    opacity: 1;
+  }
+}
+input {
+  border: 0;
+  appearance: none;
+
+  &:checked {
+    appearance: none;
+  }
+
+  &::placeholder {
+    color: $hint-color;
+  }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  margin: 0; 
+  appearance: none;
+}
+input[type=button],
+input[type=reset],
+input[type=submit] {
+  appearance: button;
+}
+* {
+  box-sizing: border-box;
+}

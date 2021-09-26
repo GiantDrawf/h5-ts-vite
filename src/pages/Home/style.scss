@@ -1,0 +1,24 @@
+@import '../../styles/variable.scss';
+
+.home {
+  text-align: center;
+
+  &__title {
+    color: $primary-color;
+    font-size: $font-lg;
+    font-weight: bold;
+    margin: 20px;
+  }
+
+  &__intro {
+    margin-top: 150px;
+    padding: 0 $h-spacing-md;
+    line-height: 1.5;
+  }
+
+  &-demos {
+    &__item {
+      margin: 20px;
+    }
+  }
+}
