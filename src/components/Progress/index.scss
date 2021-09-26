@@ -1,0 +1,25 @@
+.progressContainer {
+  position: relative;
+  .progressCanvas {
+    padding: 0px;
+    margin: 0px;
+    display: block;
+  }
+  .progressGrade {
+    position: absolute;
+    width: 90px;
+    height: 50px;
+    left: 50%;
+    bottom: 0px;
+    margin-left: -45px;
+    text-align: center;
+    font-family: DINAlternate-Bold;
+    font-size: 20px;
+    font-weight: 700;
+    color: #999;
+    span {
+      font-size: 50px;
+      color: #09a358;
+    }
+  }
+}
